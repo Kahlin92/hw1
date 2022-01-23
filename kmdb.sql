@@ -77,19 +77,103 @@
 -- TODO!
 
 -- Prints a header for the movies output
-.print "Movies"
-.print "======"
-.print ""
+
 
 -- The SQL statement for the movies output
 -- TODO!
 
 -- Prints a header for the cast output
-.print ""
-.print "Top Cast"
-.print "========"
-.print ""
+
 
 
 -- The SQL statement for the cast output
 -- TODO!
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS top_cast;
+
+CREATE TABLE movies (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+title TEXT,
+year TEXT,
+director TEXT,
+rating TEXT
+);
+
+CREATE TABLE top_cast (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+title TEXT,
+name TEXT,
+role TEXT,
+movie_id INTEGER
+)
+;
+
+INSERT INTO movies (
+id,
+title,
+year,
+director,
+rating
+)
+VALUES (
+NULL,
+"Batman Begins",
+"2005",
+"Christopher Nolan",
+"PG-13"
+);
+
+INSERT INTO movies (
+id,
+title,
+year,
+director,
+rating
+)
+VALUES (
+NULL,
+"The Dark Knight",
+"2008",
+"Christopher Nolan",
+"PG-13"
+);
+
+INSERT INTO movies (
+id,
+title,
+year,
+director,
+rating
+)
+VALUES (
+NULL,
+"The Dark Knight Rises",
+"2012",
+"Christopher Nolan",
+"PG-13"
+);
+
+INSERT INTO top_cast (
+id,
+title,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Batman Begins",
+"Christian Bale",
+"Batman",
+NULL
+);
+
+.print "Movies"
+.print "======"
+.print ""
+SELECT id, title, year, director, rating FROM movies;
+.print ""
+.print "Top Cast"
+.print "========"
+.print ""
+SELECT title, name, role FROM top_cast;
