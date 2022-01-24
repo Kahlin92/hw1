@@ -382,4 +382,4 @@ SELECT id, title, year, director, rating FROM movies;
 .print "========"
 .print ""
 SELECT movies.title, top_cast.name, top_cast.role FROM top_cast
-INNER JOIN movies ON movies.id=top_cast.id;
+INNER JOIN movies ON movies.id=top_cast.movie_id;
