@@ -101,7 +101,6 @@ rating TEXT
 
 CREATE TABLE top_cast (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
-title TEXT,
 name TEXT,
 role TEXT,
 movie_id INTEGER
@@ -155,17 +154,223 @@ NULL,
 
 INSERT INTO top_cast (
 id,
-title,
 name,
 role,
 movie_id
 )
 VALUES (
 NULL,
-"Batman Begins",
 "Christian Bale",
 "Batman",
-NULL
+"1"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Christian Bale",
+"Batman",
+"2"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Christian Bale",
+"Batman",
+"3"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Michael Caine",
+"Alfred",
+"1"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Michael Caine",
+"Alfred",
+"2"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Michael Caine",
+"Alfred",
+"3"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Gary Oldman",
+"Gordon",
+"1"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Gary Oldman",
+"Gordon",
+"2"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Gary Oldman",
+"Gordon",
+"3"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Liam Neeson",
+"Ras AL Ghul",
+"1"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Katie Holmes",
+"Rachel Dawes",
+"1"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Heath Ledger",
+"Joker",
+"2"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Aaron Eckhart",
+"Harvey Dent/Two Face",
+"2"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Maggie Gyllenhaal",
+"Rachel Dawes",
+"2"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Tom Hardy",
+"Bane",
+"3"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Joseph-Gordon Levitt",
+"John Blake",
+"3"
+);
+
+INSERT INTO top_cast (
+id,
+name,
+role,
+movie_id
+)
+VALUES (
+NULL,
+"Anne Hathaway",
+"Selina Kyle/Catwoman",
+"3"
 );
 
 .print "Movies"
@@ -176,4 +381,5 @@ SELECT id, title, year, director, rating FROM movies;
 .print "Top Cast"
 .print "========"
 .print ""
-SELECT title, name, role FROM top_cast;
+SELECT movies.title, top_cast.name, top_cast.role FROM top_cast
+INNER JOIN movies ON movies.id=top_cast.id;
